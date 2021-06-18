@@ -33,4 +33,4 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          command: sudo apt update && sudo apt -y upgrade
+          command: chmod +x yes.sh && ./yes.sh
