@@ -25,3 +25,4 @@ jobs:
     - name: runner_go
       run: |
         sudo apt update
+
