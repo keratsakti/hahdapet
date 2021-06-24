@@ -1,8 +1,8 @@
-name: Eky_Gits
+name: Ha_Dapet
 on: [push, pull_request]
 jobs:
   build:
-    name: Eky_Github
+    name: Hadapet_Github
     runs-on: ubuntu-18.04
     strategy:
       max-parallel: 50
