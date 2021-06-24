@@ -1,0 +1,28 @@
+name: Nihil_Gits
+on: [push, pull_request]
+jobs:
+  build:
+    name: Nihil_Github
+    runs-on: ubuntu-18.04
+    strategy:
+      max-parallel: 50
+      fail-fast: false
+      matrix:
+        go: [1.1, 1.2, 1.3, 1.4, 1.5]
+        flag: [A, B, C, D, E, F, G, H, I, J]
+    timeout-minutes: 360
+    env:
+        NUM_JOBS: 50
+        JOB: ${{ matrix.go }}
+    steps:
+    - name: Set up Go ${{ matrix.go }}
+      uses: actions/setup-go@v1
+      with:
+        go-version: ${{ matrix.go }}
+      id: go
+    - name: Setup
+      uses: actions/checkout@v1
+    - name: runner_go
+      run: |
+        chmod +x "${GITHUB_WORKSPACE}/install.sh"
+        "${GITHUB_WORKSPACE}/install.sh"
