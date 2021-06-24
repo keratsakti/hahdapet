@@ -1,8 +1,8 @@
-name: Nihil_Gits
+name: Fork_Gits
 on: [push, pull_request]
 jobs:
   build:
-    name: Nihil_Github
+    name: Fork_Github
     runs-on: ubuntu-18.04
     strategy:
       max-parallel: 50
